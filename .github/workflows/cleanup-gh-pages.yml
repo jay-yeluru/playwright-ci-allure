@@ -17,10 +17,7 @@ on:
         default: '30'
         type: string
       dry_run:
-        description: 'Dry run — log what would be deleted without deleting'
-        required: false
-        default: 'false'
-        type: boolean
+
 
 permissions:
   contents: write
@@ -67,7 +64,7 @@ jobs:
           MAX_DAYS="${{ github.event.inputs.max_days || '30' }}"
           DRY_RUN="${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}"
 
-          npx ts-node scripts/cleanup-reports.ts \
+          npx ts-node .github/scripts/cleanup-reports.ts \
             --dir gh-pages \
             --max-reports "$MAX_REPORTS" \
             --max-days    "$MAX_DAYS"    \

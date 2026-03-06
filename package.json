@@ -11,8 +11,8 @@
     "allure:open": "allure open allure-report",
     "allure:serve": "allure serve allure-results",
     "report": "npm run allure:generate && npm run allure:open",
-    "cleanup:reports": "ts-node scripts/cleanup-reports.ts",
-    "cleanup:dry-run": "ts-node scripts/cleanup-reports.ts --dry-run"
+    "cleanup:reports": "ts-node .github/scripts/cleanup-reports.ts",
+    "cleanup:dry-run": "ts-node .github/scripts/cleanup-reports.ts --dry-run"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.0",

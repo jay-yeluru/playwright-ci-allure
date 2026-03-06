@@ -70,10 +70,13 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          npx playwright test \
-            --project="${{ matrix.browser_engine == 'chromium' && 'Desktop Chrome,Desktop Chrome HiDPI,Desktop Edge,Pixel 7,Galaxy S9+,Galaxy Tab S4' || matrix.browser_engine == 'firefox' && 'Desktop Firefox,Desktop Firefox HiDPI' || 'Desktop Safari,iPhone 15,iPhone 15 Pro Max,iPhone SE,iPad Pro 11,iPad Mini' }}" \
-            --shard=${{ matrix.shard }} \
-            --reporter=line,allure-playwright
+          if [ "${{ matrix.browser_engine }}" = "chromium" ]; then
+            npx playwright test --project="Desktop Chrome" --project="Desktop Chrome HiDPI" --project="Desktop Edge" --project="Pixel 7" --project="Galaxy S9+" --project="Galaxy Tab S4" --shard=${{ matrix.shard }} --reporter=line,allure-playwright
+          elif [ "${{ matrix.browser_engine }}" = "firefox" ]; then
+            npx playwright test --project="Desktop Firefox" --project="Desktop Firefox HiDPI" --shard=${{ matrix.shard }} --reporter=line,allure-playwright
+          elif [ "${{ matrix.browser_engine }}" = "webkit" ]; then
+            npx playwright test --project="Desktop Safari" --project="iPhone 15" --project="iPhone 15 Pro Max" --project="iPhone SE" --project="iPad Pro 11" --project="iPad Mini" --shard=${{ matrix.shard }} --reporter=line,allure-playwright
+          fi
         env:
           BASE_URL: ${{ vars.BASE_URL || 'https://demo.playwright.dev/todomvc' }}
           CI: true
@@ -248,7 +251,7 @@ jobs:
       # ── Clean up old runs: > 40 runs OR older than 30 days ──────────────────
       - name: Clean up old report runs
         run: |
-          npx ts-node scripts/cleanup-reports.ts \
+          npx ts-node .github/scripts/cleanup-reports.ts \
             --dir gh-pages \
             --max-reports 40 \
             --max-days 30
