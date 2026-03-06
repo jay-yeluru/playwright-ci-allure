@@ -1,14 +1,29 @@
+<p align="center">
+  <img src="assets/hero_banner.png" alt="Playwright CI Allure Hero Banner" width="800">
+</p>
+
 # playwright-ci-allure
 
-A sample Playwright E2E test project using:
-- **Page Object Model (POM)** for clean page abstractions
-- **Fake BDD style** — Gherkin-like `Given/When/Then` steps via Allure annotations (no Cucumber dependency)
-- **Allure Reporting** with categories, history, and environment info
-- **GitHub Actions CI** with test sharding and auto-publish to GitHub Pages
+<p align="center">
+  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" alt="Playwright" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Allure_Report-E22A4E?style=for-the-badge&logo=allure&logoColor=white" alt="Allure" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://jay-yeluru.github.io/playwright-ci-allure/badges/tests.svg" alt="Tests Status" />
+</p>
+
+> A modern, scalable sample Playwright E2E test project demonstrating beautiful reporting and clean architecture! ✨
+
+### 🌟 Key Features
+
+- 🏗️ **Page Object Model (POM)** for clean page abstractions
+- 🎭 **Fake BDD style** — Gherkin-like `Given/When/Then` steps via Allure annotations (no Cucumber dependency)
+- 📊 **Allure Reporting** with categories, history, and environment info
+- ⚙️ **GitHub Actions CI** with test sharding and auto-publish to GitHub Pages
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 playwright-ci-allure/
@@ -37,7 +52,7 @@ playwright-ci-allure/
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Install
 
@@ -90,7 +105,7 @@ npm run allure:serve
 
 ---
 
-## BDD Style
+## 🎭 BDD Style
 
 Tests use a **fake BDD** approach — no Cucumber/Gherkin files required. Steps are plain TypeScript functions that wrap Allure's step annotation:
 
@@ -120,9 +135,9 @@ Steps appear nested and labelled in the Allure report UI.
 
 ---
 
-## CI / GitHub Actions
+## ⚙️ CI / GitHub Actions
 
-### Workflows
+### 🔄 Workflows
 
 **`playwright.yml`** — the main pipeline, triggered on push to `main`/`develop`, PRs, nightly schedule, and manual dispatch.
 
@@ -145,32 +160,32 @@ It runs as 3 jobs:
 
 ---
 
-### One-time GitHub Pages setup
+### 🌐 One-time GitHub Pages setup
 
 1. Go to **Settings → Pages** in your repository
 2. Set **Source** to `Deploy from a branch`
 3. Set **Branch** to `gh-pages`, folder `/` (root)
-4. Save — GitHub will give you the URL: `https://<owner>.github.io/<repo>/`
+4. Save — GitHub will give you the URL: `https://jay-yeluru.github.io/playwright-ci-allure/`
 
 The `gh-pages` branch is created automatically on the first push to `main` if it does not already exist.
 
 After your first successful run the report will be live at:
 
-```
-https://<owner>.github.io/<repo>/              ← always the latest run
-https://<owner>.github.io/<repo>/<run_number>/ ← permanent link per run
-https://<owner>.github.io/<repo>/badges/tests.svg ← embeddable status badge
+```text
+https://jay-yeluru.github.io/playwright-ci-allure/              ← always the latest run
+https://jay-yeluru.github.io/playwright-ci-allure/<run_number>/ ← permanent link per run
+https://jay-yeluru.github.io/playwright-ci-allure/badges/tests.svg ← embeddable status badge
 ```
 
 Add the badge to your README:
 
 ```md
-![tests](https://<owner>.github.io/<repo>/badges/tests.svg)
+![tests](https://jay-yeluru.github.io/playwright-ci-allure/badges/tests.svg)
 ```
 
 ---
 
-### Report retention / cleanup
+### 🧹 Report retention / cleanup
 
 Old reports are pruned by `scripts/cleanup-reports.ts` on every publish, and also by the dedicated **`cleanup-gh-pages.yml`** workflow which runs every Sunday at 02:00 UTC.
 
@@ -200,7 +215,7 @@ You can also trigger the cleanup workflow manually from the **Actions** tab in G
 
 ---
 
-## Environment Variables
+## 🔧 Environment Variables
 
 | Variable   | Default                                    | Description        |
 |------------|--------------------------------------------|--------------------|
