@@ -7,3 +7,12 @@ test-results/
 .env
 .env.local
 *.log
+
+# Temp files
+tmp-*/
+tmp/
+allure-results-combined/
+allure-report-new/allure-results/
+allure-report/
+tmp-results/
+
