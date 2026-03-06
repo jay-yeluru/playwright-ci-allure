@@ -9,8 +9,9 @@
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Allure_Report-E22A4E?style=for-the-badge&logo=allure&logoColor=white" alt="Allure" />
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions" />
-  <img src="https://jay-yeluru.github.io/playwright-ci-allure/badges/tests.svg" alt="Tests Status" />
 </p>
+
+[![Tests Status](https://jay-yeluru.github.io/playwright-ci-allure/badges/tests.svg)](https://jay-yeluru.github.io/playwright-ci-allure/)
 
 > A modern, scalable sample Playwright E2E test project demonstrating beautiful reporting and clean architecture! ✨
 
