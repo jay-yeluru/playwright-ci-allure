@@ -164,6 +164,14 @@ jobs:
           npm install -g allure-commandline
           allure --version
 
+      - name: Write environment properties
+        run: |
+          cat > allure-results-combined/environment.properties << EOF
+          PLAYWRIGHT_VERSION=1.44.0
+          BASE_URL=${{ vars.BASE_URL || 'https://demo.playwright.dev/todomvc' }}
+          CI=true
+          EOF
+
       - name: Generate Allure report
         run: |
           allure generate allure-results-combined \
@@ -320,6 +328,14 @@ jobs:
 
       - name: Install Allure CLI
         run: npm install -g allure-commandline
+
+      - name: Write environment properties
+        run: |
+          cat > allure-results-combined/environment.properties << EOF
+          PLAYWRIGHT_VERSION=1.44.0
+          BASE_URL=${{ vars.BASE_URL || 'https://demo.playwright.dev/todomvc' }}
+          CI=true
+          EOF
 
       - name: Generate Allure report
         run: allure generate allure-results-combined --clean -o allure-report
