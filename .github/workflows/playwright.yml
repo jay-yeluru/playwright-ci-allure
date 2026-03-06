@@ -48,9 +48,9 @@ jobs:
         browser_engine: [chromium, firefox, webkit]
         shard: ['1/3', '2/3', '3/3']
         exclude:
-          - browser_engine: ${{ github.event.inputs.browser_engine != 'all' && github.event.inputs.browser_engine != 'chromium' && 'chromium' || '' }}
-          - browser_engine: ${{ github.event.inputs.browser_engine != 'all' && github.event.inputs.browser_engine != 'firefox'  && 'firefox'  || '' }}
-          - browser_engine: ${{ github.event.inputs.browser_engine != 'all' && github.event.inputs.browser_engine != 'webkit'   && 'webkit'   || '' }}
+          - browser_engine: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.browser_engine != 'all' && github.event.inputs.browser_engine != 'chromium' && 'chromium' || '' }}
+          - browser_engine: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.browser_engine != 'all' && github.event.inputs.browser_engine != 'firefox'  && 'firefox'  || '' }}
+          - browser_engine: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.browser_engine != 'all' && github.event.inputs.browser_engine != 'webkit'   && 'webkit'   || '' }}
 
     steps:
       - name: Checkout repository
