@@ -82,7 +82,7 @@ jobs:
           else
             REMOVED=$(git diff --cached --name-only --diff-filter=D | wc -l)
             git commit -m "chore: prune ${REMOVED} old report run(s) (max=${{ github.event.inputs.max_reports || '40' }}, days=${{ github.event.inputs.max_days || '30' }})"
-            git push origin gh-pages
+            git push origin HEAD:gh-pages
             echo "gh-pages cleaned up."
           fi
 

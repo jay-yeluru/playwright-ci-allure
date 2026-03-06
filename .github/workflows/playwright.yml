@@ -267,7 +267,7 @@ jobs:
             echo "Nothing changed — skipping commit."
           else
             git commit -m "report: run #${{ github.run_number }} · $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push origin gh-pages
+            git push origin HEAD:gh-pages
           fi
 
       # ── Surface the live URL in the job summary ──────────────────────────────
