@@ -19,8 +19,10 @@
 
 - 🏗️ **Page Object Model (POM)** for clean page abstractions
 - 🎭 **Fake BDD style** — Gherkin-like `Given/When/Then` steps via Allure annotations (no Cucumber dependency)
-- 📊 **Allure Reporting** with categories, history, and environment info
 - ⚙️ **GitHub Actions CI** with test sharding and auto-publish to GitHub Pages
+- 📊 **Allure Reporting** with categories, history, and environment info
+  
+    [Live Allure Report](https://jay-yeluru.github.io/playwright-ci-allure)
 
 ---
 
