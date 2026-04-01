@@ -1,0 +1,1 @@
+[{"values":["1.44.0"],"name":"PLAYWRIGHT_VERSION"},{"values":["https://demo.playwright.dev/todomvc"],"name":"BASE_URL"},{"values":["true"],"name":"CI"}]
